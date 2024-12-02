@@ -1,0 +1,31 @@
+---
+import { langSelector } from '@shared/utils/i18n'
+import { labels } from '@landing/i18n/config'
+
+import Layout from '@shared/layouts/Layout.astro'
+
+import Intro from '@landing/components/sections/Intro.astro'
+import Reviews from '@landing/components/sections/Reviews.astro'
+import BuyNow from '@landing/components/sections/BuyNow.astro'
+import Newsletter from '@landing/components/sections/Newsletter.astro'
+
+const { currentLocale = 'en' } = Astro
+
+const lang = langSelector({ currentLocale, labels })
+const SEO = lang.seo
+const KEYS = lang.keys
+---
+
+<Layout title={SEO.title} description={SEO.description}>
+  <Intro
+    id={[KEYS[0], KEYS[1]]}
+    statics={lang.intro}
+    trailerStatics={lang.trailer}
+  />
+
+  <div class="content">
+    <Reviews id={KEYS[2]} statics={lang.reviews} />
+    <BuyNow id={KEYS[5]} statics={lang.buynow} />
+    <Newsletter id={KEYS[6]} statics={lang.newsletter} />
+  </div>
+</Layout>

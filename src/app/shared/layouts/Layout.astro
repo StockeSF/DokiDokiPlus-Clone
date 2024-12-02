@@ -1,0 +1,41 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+import { langSelector } from '@shared/utils/i18n'
+import { labels } from '@shared/i18n/config'
+
+import Footer from '@shared/components/layout/Footer.astro'
+
+interface Props {
+	title: string
+	description: string
+	mainAttributes?: HTMLAttributes<'main'>
+}
+
+const { currentLocale = 'en' } = Astro
+const { title, description, mainAttributes } = Astro.props
+
+const lang = langSelector({ currentLocale, labels })
+---
+
+<!doctype html>
+<html lang={currentLocale}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="preload" href="/assets/fonts/Riffic.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+	</head>
+	<body>
+		<main {...mainAttributes}>
+			<slot />
+		</main>
+		<Footer statics={lang.footer} />
+	</body>
+</html>
+
+<style is:global>
+	@import url('../styles/globals.css');
+</style>

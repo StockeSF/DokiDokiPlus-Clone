@@ -1,0 +1,23 @@
+---
+import type { StoreListContent } from '@landing/env'
+
+import { Icon } from 'astro-icon/components'
+
+type Props = StoreListContent
+
+const { storeList } = Astro.props
+---
+
+<div class="available">
+  <p class="available__text">{storeList.text}</p>
+
+  <ul class="available__stores">
+    {Object.entries(storeList.stores).map(([key, { link, aria }]) => (
+      <li>
+        <a href={link} aria-label={aria} class="available__store" target="_blank">
+          <Icon name={key} size="25" />
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>

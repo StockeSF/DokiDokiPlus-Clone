@@ -1,0 +1,86 @@
+.buynow {
+  padding: 4rem 0;
+  background: var(--doki-white);
+  gap: 3rem;
+}
+
+.buynow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(315deg, #fff 40%, #ffffff05);
+  z-index: 5;
+}
+
+.buynow__bg {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  opacity: .11;
+  background: url('/assets/backgrounds/pen-pattern.svg');
+  background-size: 230% 100%;
+  background-position: 50%;
+  top: -20%;
+  left: -10%;
+  z-index: 1;
+}
+
+.buynow__section {
+  --_order: none;
+
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  padding: 0 calc(100% * .1);
+  z-index: 10;
+}
+
+.buynow__picture {
+  width: 100%;
+  height: fit-content;
+  order: var(--_order);
+}
+
+.buynow__img {
+  --_size: 100%;
+
+  width: var(--_size);
+  height: var(--_size);
+  aspect-ratio: 1 / 1;
+}
+
+.buynow__title {
+  color: var(--doki-magenta);
+  font-size: clamp(2.5rem, 4.5vw, 5rem);
+  max-width: 20ch;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .buynow {
+    padding: 5vw 0;
+  }
+
+  .buynow__section {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    place-items: center;
+    min-height: 550px;
+  }
+
+  .buynow__section--even {
+    --_order: 1;
+  }
+
+  .buynow__picture, .buynow__content {
+    grid-column: span 6 / span 6;
+  }
+
+  .buynow__img {
+    --_size: 90%;
+  }
+
+  .buynow__title {
+    margin-top: 0;
+    max-width: 10ch;
+  }
+}

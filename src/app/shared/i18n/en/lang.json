@@ -1,0 +1,53 @@
+{
+  "footer": {
+    "presskit": {
+      "title": "Get the Press Kit",
+      "link": "http://serenityforge.com/games/doki-doki-literature-club-plus/press-kit"
+    },
+    "social": {
+      "brand-facebook": {
+        "link": "https://www.facebook.com/TeamSalvato/",
+        "aria": "Check out our Facebook!"
+      },
+      "brand-x": {
+        "link": "https://twitter.com/TeamSalvato",
+        "aria": "Check out our X!"
+      },
+      "brand-youtube": {
+        "link": "https://www.youtube.com/teamsalvato",
+        "aria": "Check out our YouTube channel!"
+      }
+    },
+    "copyright": "Copyright © 2021 Dan Salvato LLC & Serenity Forge LLC. Serenity Forge™ and the related logo are trademarks of Serenity Forge LLC. All Rights Reserved. Warranty & Support: <a href='https://serenityforge.com/' class='footer__text--white' target='_blank'>https://serenityforge.com/</a>",
+    "privacy-policy": {
+      "title": "Privacy Policy",
+      "link": "https://ddlc.plus/privacy-policy"
+    },
+    "disclaimer": {
+      "esrb": {
+        "title": "North America",
+        "img": {
+          "avif": "/assets/others/DDLCESRB.avif",
+          "webp": "/assets/others/DDLCESRB.webp",
+          "alt": "Mature 17+ ESRB"
+        }
+      },
+      "pegi18": {
+        "title": "Europe",
+        "img": {
+          "avif": "/assets/others/PEGI18.avif",
+          "webp": "/assets/others/PEGI18.webp",
+          "alt": "PEGI 18"
+        }
+      },
+      "f18": {
+        "title": "Germany",
+        "img": {
+          "avif": "/assets/others/f_18.avif",
+          "webp": "/assets/others/f_18.webp",
+          "alt": "USK ab 18"
+        }
+      }
+    }
+  }
+}

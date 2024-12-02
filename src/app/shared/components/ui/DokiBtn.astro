@@ -1,0 +1,39 @@
+---
+import type { HTMLTag, Polymorphic } from 'astro/types'
+
+type Props<Tag extends HTMLTag> = Polymorphic<{
+  as: Tag
+  variant?: keyof typeof variantClasses
+	typeBtn?: keyof typeof typeClasses
+}>
+
+const { as: Tag, variant, typeBtn, class: className, ...rest } = Astro.props
+
+const variantClasses = {
+	xxl: 'dokibtn--text-xxl',
+	xl: 'dokibtn--text-xl',
+	lg: 'dokibtn--text-lg',
+	sm: 'dokibtn--text-sm'
+}
+
+const typeClasses = {
+	'g&m': 'dokibtn--gm',
+	newsletter: 'dokibtn--newsletter',
+	footer: 'dokibtn--footer'
+}
+
+const classes = [
+	'dokibtn',
+	variantClasses[variant as keyof typeof variantClasses],
+	typeClasses[typeBtn as keyof typeof typeClasses],
+	className
+]
+---
+
+<Tag class:list={classes} {...rest}>
+  <slot />
+</Tag>
+
+<style>
+  @import url('../../styles/dokibtn.css');
+</style>

@@ -1,0 +1,153 @@
+.intro {
+  background: #ffe9f5;
+}
+
+.intro__hero, .intro__trailer {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.intro__hero {
+  position: relative;
+}
+
+.intro__hero-wrapper {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.available {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  background: var(--doki-magenta);
+  transform: translateX(-50%);
+  z-index: 25;
+  display: flex;
+  align-items: center;
+}
+
+.available__text {
+  color: white;
+  font-size: 1.1rem;
+  padding: 0 clamp(.875rem, 1vw, 1.875rem);
+}
+
+.available__stores {
+  display: flex;
+}
+
+.available__store {
+  display: grid;
+  background: transparent;
+  place-items: center;
+  padding: 1.5vw 1.1rem;
+  transition: background 150ms ease;
+  color: white;
+}
+
+.available__store:hover {
+  background: var(--doki-purple);
+}
+
+.intro__character {
+  position: absolute;
+  bottom: unset;
+  left: unset;
+  right: unset;
+  top: unset;
+  height: 100%;
+  max-width: none;
+  max-height: 75vw;
+  z-index: 0;
+}
+
+
+
+.intro__character-image {
+  display: inline-block;
+  object-fit: scale-down;
+  max-width: none;
+  height: 100%;
+}
+
+.intro__trailer {
+  display: grid;
+  place-content: center;
+}
+
+.trailerbtn {
+  --_bg-play: var(--doki-pink);
+  background: var(--doki-pink);
+  width: min(100%, 680px);
+  display: grid;
+  place-items: center;
+  position: relative;
+  z-index: 20;
+  border: 4px solid var(--doki-pink);
+  aspect-ratio: 16 / 9;
+  cursor: pointer;
+}
+
+.trailerbtn:hover {
+  --_bg-play: var(--doki-magenta);
+}
+
+.trailerbtn__play {
+  --_size: 72px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--_size);
+  height: var(--_size);
+  position: absolute;
+  border-radius: 9999px;
+  padding: 1rem;
+  border: 2px solid white;
+  background: var(--_bg-play);
+  color: white;
+  transition: background 150ms ease;
+}
+
+.trailerbtn__picture {
+  width: 100%;
+  height: 100%;
+}
+
+.trailerbtn__img {
+  width: inherit;
+  height: inherit;
+}
+
+@media screen and (min-width: 1024px) {
+  .intro__character--sayori {
+    left: -6%;
+    bottom: -8%;
+    z-index: 5;
+  }
+
+  .intro__character--yuri {
+    height: 115vh;
+    max-width: 40vw;
+    left: 8%;
+    bottom: -45%;
+    z-index: 10;
+  }
+
+  .intro__character--monika {
+    height: 115vh;
+    max-width: 40vw;
+    right: 1%;
+    bottom: -44%;
+    z-index: 10;
+  }
+
+  .intro__character--natsuki {
+    right: -5%;
+    bottom: -8%;
+    z-index: 5;
+  }
+}

@@ -1,0 +1,61 @@
+---
+import type { FooterContent } from '@/app/env'
+
+import { Icon } from 'astro-icon/components'
+
+import DokiBtn from '@shared/components/ui/DokiBtn.astro'
+
+interface Props {
+  statics: FooterContent
+} 
+
+const { statics } = Astro.props
+---
+
+<footer class="footer">
+  <DokiBtn as="a" href={statics.presskit.link} typeBtn="footer" target="_blank">
+    {statics.presskit.title}
+  </DokiBtn>
+
+  <ul class="footer__list">
+    {Object.entries(statics.social).map(([key, { link, aria }]) => (
+      <li>
+        <a href={link} class="footer__link" aria-label={aria} target="_blank">
+          <Icon name={key} size={18} />
+        </a>
+      </li>
+    ))}
+  </ul>
+
+  <p class="footer__text" set:html={statics.copyright} />
+
+  <a href={statics['privacy-policy'].link} class="footer__text footer__text--white">
+    {statics['privacy-policy'].title}
+  </a>
+
+  <div class="footer__disclaimer">
+    <ul class="footer__list footer__list--ratings">
+      {Object.entries(statics.disclaimer).map(([key, { title, img }]) => (
+        <li class="footer__rating">
+          <picture>
+            <source srcset={img.avif} type="image/avif">
+            <img
+              src={img.webp}
+              class={`footer__rate-img footer__rate-img--${key}`}
+              decoding="async"
+              fetchpriority="low"
+              loading="lazy"
+              alt={img.alt}
+            />
+          </picture>
+
+          <span class="footer__disc-text">{title}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</footer>
+
+<style is:global>
+  @import url('../../styles/footer.css');
+</style>

@@ -1,0 +1,132 @@
+:root {
+  --doki-pink: #f38cc3;
+  --doki-purple: #831f8a;
+  --doki-magenta: #e61484;
+  --doki-white: #fffdea;
+  --doki-box: #fbedec;
+  --doki-taskbar-color: #f2cece;
+  --doki-light-pink: #ffcaee;
+
+  --riffic: 'riffic', sans-serif;
+  --aller: 'aller-rg', sans-serif;
+
+  --doki-natsuki: #ffa7e3;
+  --doki-natsuki-text: #80104f;
+  --doki-yuri: #a9a5ff;
+  --doki-yuri-text: #4c169b;
+  --doki-monika: #afffdc;
+  --doki-monika-text: #0b5e27;
+  --doki-sayori: #9ccaff;
+  --doki-sayori-text: #21538e;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'riffic';
+  src: url('/assets/fonts/Riffic.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'aller-rg';
+  src: url('/assets/fonts/Aller_Rg.woff2') format('woff2');
+  font-display: swap;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+  font-family: var(--riffic)
+}
+
+p {
+  color: inherit;
+  text-wrap: pretty;
+  font-family: var(--aller);
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  pointer-events: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+input {
+  outline: none;
+  font-family: var(--aller);
+}
+
+body {
+  background: var(--doki-taskbar-color);
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  overflow: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.container--flex {
+  display: flex;
+}
+
+.container--fit-h {
+  height: fit-content;
+  min-height: fit-content;
+}
+
+.container--intro {
+  min-height: 250vh;
+  min-height: 250dvh;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bg--intro {
+  height: 110vh;
+  height: 110dvh;
+}
+
+.bg__image {
+  object-fit: cover;
+  width: inherit;
+  height: inherit;
+  aspect-ratio: 16 / 9;
+}
+
+.content {
+  position: relative;
+  z-index: 50;
+}

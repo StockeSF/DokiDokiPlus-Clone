@@ -1,0 +1,26 @@
+---
+import type { SectionLayout, BuyNowContent } from '@landing/env'
+
+import BuyNowSection from '@landing/components/ui/BuyNowSection.astro'
+
+interface Props extends SectionLayout {
+  statics: BuyNowContent
+}
+
+const { id, statics } = Astro.props
+---
+
+<section id={id} class="container buynow">
+  <div
+    class="buynow__bg"
+    aria-hidden="true"
+  />
+
+  {Object.entries(statics).map(([key, { ...rest }], i) => (
+    <BuyNowSection btnTitle={key} iterator={i} {...rest} />
+  ))}
+</section>
+
+<style is:global>
+  @import url('../../styles/buynow.css');
+</style>

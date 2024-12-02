@@ -1,0 +1,48 @@
+---
+import type { SectionLayout, NewsletterContent } from '@landing/env'
+
+import DokiBtn from '@shared/components/ui/DokiBtn.astro'
+
+interface Props extends SectionLayout {
+  statics: NewsletterContent
+}
+
+const { id, statics } = Astro.props
+---
+
+<section id={id} class="container container--fit-h newsletter">
+  <h2 class="newsletter__title">{statics.title}</h2>
+
+  <article class="newsletter__content">
+    <header>
+      {statics.labels.map((label) => (
+        <>
+          <label for={label.toLowerCase()} class="newsletter__label">{label}</label>
+          <input type="text" id={label.toLowerCase()} class="newsletter__input" autocomplete="off" />
+        </>
+      ))}
+    </header>
+
+    <footer class="newsletter__footer">
+      <div class="newsletter__disclaimer-wrapper">
+        <input type="checkbox" class="newsletter__input newsletter__input--checkbox" />
+        <p class="newsletter__text" set:html={statics.disclaimer[0]} />
+      </div>
+
+      <p class="newsletter__text" set:html={statics.disclaimer[1]} />
+    
+      <DokiBtn
+        as="input"
+        variant="lg"
+        typeBtn="newsletter"
+        class="newsletter__submit"
+        name="Submit"
+        type="submit"
+      />
+    </footer>
+  </article>
+</section>
+
+<style>
+  @import url('../../styles/newsletter.css');
+</style>

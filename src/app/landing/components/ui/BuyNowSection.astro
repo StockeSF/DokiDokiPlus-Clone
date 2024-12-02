@@ -1,0 +1,39 @@
+---
+import DokiBtn from '@shared/components/ui/DokiBtn.astro'
+
+interface Props {
+  title: string
+  btnTitle: string
+  link: string
+  img: Record<'avif' | 'webp' | 'alt', string>
+  iterator: number
+}
+
+const { title, link, btnTitle, img, iterator } = Astro.props
+---
+
+<article
+  class:list={[
+    "buynow__section",
+    { "buynow__section--even": iterator % 2 }
+  ]}
+>
+  <picture class="buynow__picture">
+    <source srcset={img.avif} type="image/avif">
+    <img
+      src={img.webp}
+      class="buynow__img"
+      decoding="async"
+      loading="lazy"
+      alt={img.alt}
+    />
+  </picture>
+
+  <div class="buynow__content">
+    <h2 class="buynow__title">{title}</h2>
+
+    <DokiBtn as="a" href={link} variant="lg" typeBtn="g&m">
+      {btnTitle}
+    </DokiBtn>
+  </div>
+</article>
