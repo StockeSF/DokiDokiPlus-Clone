@@ -8,7 +8,7 @@
   <picture class="trailerbtn__picture">
     <source srcset={`${trailerStatics.img.src}.avif`} type="image/avif" />
     <img
-      src={`${trailerStatics.img.webp}.webp`}
+      src={`${trailerStatics.img.src}.webp`}
       class="trailerbtn__img"
       decoding="async"
       loading="lazy"
