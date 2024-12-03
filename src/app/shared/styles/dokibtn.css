@@ -21,6 +21,32 @@
   background: var(--_hover-color);
 }
 
+.dokibtn--trailer {
+  --_xy: unset;
+
+  position: absolute;
+  inset: var(--_xy);
+  width: 4rem;
+  height: 4rem;
+  display: grid;
+  place-content: center;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.dokibtn--trailer-close {
+  --_xy: -25% 0 0 50%;
+  transform: translateX(-50%);
+}
+
+.dokibtn--trailer-x {
+  transition: transform 500ms ease;
+}
+
+.dokibtn--trailer-close:hover .dokibtn--trailer-x {
+  transform: rotate(90deg);
+}
+
 .dokibtn--gm {
   --_primary-color: var(--doki-purple);
   --_hover-color: var(--doki-pink);
@@ -70,4 +96,22 @@
 /*  Paddings */
 .dokibtn--header {
   --_pad: 1rem;
+}
+
+@media screen and (min-width: 640px) {
+  .dokibtn--trailer-close {
+    --_xy: -15% 0 0 50%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .dokibtn--trailer-close {
+    --_xy: -10% 0 0 50%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .dokibtn--trailer-close {
+    --_xy: -5% 0 0 50%;
+  }
 }

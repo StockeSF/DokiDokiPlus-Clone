@@ -32,6 +32,7 @@
   position: relative;
   width: var(--_width);
   min-width: var(--_width);
+  height: inherit;
   padding: 0 6vw;
   display: flex;
   flex-direction: column;

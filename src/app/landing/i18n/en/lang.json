@@ -6,29 +6,24 @@
   "intro": {
     "title": "Enter the #1 <br /> Psychological Horror <br /> Experience!",
     "logoImg": {
-      "avif": "/assets/others/DDLC-Plus-Logo_Circle.avif",
-      "webp": "/assets/others/DDLC-Plus-Logo_Circle.webp",
+      "src": "/assets/others/DDLC-Plus-Logo_Circle",
       "alt": "Game's logo"
     },
     "charactersImg": {
       "sayori": {
-        "avif": "/assets/characters/normal/sayori-724.avif",
-        "webp": "/assets/characters/normal/sayori-724.webp",
+        "src": "/assets/characters/normal/sayori-724",
         "alt": ""
       },
       "yuri": {
-        "avif": "/assets/characters/normal/yuri-724.avif",
-        "webp": "/assets/characters/normal/yuri-724.webp",
+        "src": "/assets/characters/normal/yuri-724",
         "alt": ""
       },
       "monika": {
-        "avif": "/assets/characters/normal/monika-724.avif",
-        "webp": "/assets/characters/normal/monika-724.webp",
+        "src": "/assets/characters/normal/monika-724",
         "alt": ""
       },
       "natsuki": {
-        "avif": "/assets/characters/normal/natsuki-724.avif",
-        "webp": "/assets/characters/normal/natsuki-724.webp",
+        "src": "/assets/characters/normal/natsuki-724",
         "alt": ""
       }
     },
@@ -59,72 +54,121 @@
     }
   },
   "trailer": {
-    "ariaBtn": "Click to show the game trailer.",
+    "arias": {
+      "aria-open-trailer": "Click to show the game trailer.",
+      "aria-close-trailer": "Click to close the game trailer."
+    },
     "img": {
-      "avif": "/assets/features/monika.avif",
-      "webp": "/assets/features/monika.webp",
+      "src": "/assets/features/monika",
       "alt": ""
     }
   },
   "reviews": {
     "title": "A terrifying world of romance and poetry awaits!",
     "body": "Now’s your chance to discover why Doki Doki Literature Club is one of the most beloved psychological horror games of the decade.",
-    "reviewList": {
-      "pcgamer": {
+    "reviewList": [
+      {
+        "icon": "pcgamer",
         "text": "This is one of the most surprising games of the year, and you should play it...",
         "width": 160,
         "height": 45
       },
-      "ign": {
+      {
+        "icon": "ign",
         "text": "The best horror games keep you on edge after you stop playing, and few games do that as well...",
         "width": 80,
         "height": 30
       },
-      "theverge": {
+      {
+        "icon": "theverge",
         "text": "You have no idea what to expect anymore, but you keep going because you want to know what happens next.",
         "height": 25
       },
-      "kotaku": {
+      {
+        "icon": "kotaku",
         "text": "This is a truly special game.",
         "width": 100,
         "height": 25
       },
-      "gq": {
+      {
+        "icon": "gq",
         "text": "I can say with great certainty this is one of the scariest games I have ever played.",
         "size": 40
       },
-      "polygon": {
+      {
+        "icon": "polygon",
         "text": "Doki Doki Literature Club is… uncontrollably horrific.",
         "width": 120,
         "height": 30
       }
-    }
+    ]
   },
   "features": {
-    "ddlc": {
-      "image": "feature_01",
-      "title": "Mind-Shattering Horror",
-      "description": "With every poem you write and every choice you make, you’ll charm your crush and begin to unfold the horrors of school romance. Do you have what it takes to crack the code of dating sims and get the perfect ending?"
+    "img": {
+      "src": "/assets/others/dokidoki-taskbar-icon",
+      "alt": "Doki Doki logo"
     },
-    "files": {
-      "image": "feature_02",
-      "title": "Full HD Visuals",
-      "description": "The original game receives a high-fidelity visual upgrade with all artwork now in Full HD (1080p)."
-    },
-    "side-stories": {
-      "image": "feature_03",
-      "title": "6 New Side Stories",
-      "description": "Enjoy hours of new content in these tales of friendship and literature, and learn about the origins of the Literature Club."
-    },
-    "music": {
-      "image": "feature_04",
-      "title": "13 Additional Music Tracks",
-      "description": "There are now a total of 26 in-game songs, all playable in the new music player. Make a playlist of your favorite songs, or loop a single track forever."
-    },
-    "photos": {
-      "image": "feature_05",
-      "title": "100+ Unlockable Images",
-      "description": "Unlock wallpapers, game art, never-before-seen concept sketches, and more by exploring everything the Literature Club has to offer."
+    "featureList": {
+      "ddlc": {
+        "title": "Mind-Shattering Horror",
+        "description": "With every poem you write and every choice you make, you’ll charm your crush and begin to unfold the horrors of school romance. Do you have what it takes to crack the code of dating sims and get the perfect ending?",
+        "img": {
+          "src": "/assets/features/feature_01",
+          "alt": ""
+        },
+        "icon": {
+          "src": "/assets/others/ddlc-icon",
+          "alt": "A heart in a circle."
+        }
+      },
+      "files": {
+        "title": "Full HD Visuals",
+        "description": "The original game receives a high-fidelity visual upgrade with all artwork now in Full HD (1080p).",
+        "img": {
+          "src": "/assets/features/feature_02",
+          "alt": ""
+        },
+        "icon": {
+          "src": "/assets/others/files-icon",
+          "alt": "A folder."
+        }
+      },
+      "side-stories": {
+        "title": "6 New Side Stories",
+        "description": "Enjoy hours of new content in these tales of friendship and literature, and learn about the origins of the Literature Club.",
+        "img": {
+          "src": "/assets/features/feature_03",
+          "alt": ""
+        },
+        "icon": {
+          "src": "/assets/others/side-stories-icon",
+          "alt": "A plus symbol."
+        }
+      },
+      "music": {
+        "title": "13 Additional Music Tracks",
+        "description": "There are now a total of 26 in-game songs, all playable in the new music player. Make a playlist of your favorite songs, or loop a single track forever.",
+        "img": {
+          "src": "/assets/features/feature_04",
+          "alt": ""
+        },
+        "icon": {
+          "src": "/assets/others/music-icon",
+          "alt": "A music note in a circle."
+        }
+      },
+      "photos": {
+        "title": "100+ Unlockable Images",
+        "description": "Unlock wallpapers, game art, never-before-seen concept sketches, and more by exploring everything the Literature Club has to offer.",
+        "img": {
+          "src": "/assets/features/feature_05",
+          "alt": ""
+        },
+        "icon": {
+          "src": "/assets/others/photos-icon",
+          "alt": "A camera."
+        }
+      }
     }
   },
   "characters": {
@@ -133,19 +177,59 @@
     "characterList": {
       "sayori": {
         "introduction": "The youthful bundle of sunshine who values happiness the most",
-        "body": "Sayori, your childhood friend, begins your story by recruiting you to the Literature Club! As a daydreamer full of positive energy, Sayori’s greatest passion is to deliver happiness to others."
+        "body": "Sayori, your childhood friend, begins your story by recruiting you to the Literature Club! As a daydreamer full of positive energy, Sayori’s greatest passion is to deliver happiness to others.",
+        "img": {
+          "normal": {
+            "src": "/assets/characters/normal/sayori",
+            "alt": ""
+          },
+          "chibi": {
+            "src": "/assets/characters/chibi/sayori-chibi",
+            "alt": ""
+          }
+        }
       },
       "natsuki": {
         "introduction": "The deceivingly cute girl who packs an assertive punch",
-        "body": "Natsuki tries to act tough, but her cuteness can make it hard to take her too seriously! She might be willing to warm up to good listeners who can respect her love for cute things."
+        "body": "Natsuki tries to act tough, but her cuteness can make it hard to take her too seriously! She might be willing to warm up to good listeners who can respect her love for cute things.",
+        "img": {
+          "normal": {
+            "src": "/assets/characters/normal/natsuki",
+            "alt": ""
+          },
+          "chibi": {
+            "src": "/assets/characters/chibi/natsuki-chibi",
+            "alt": ""
+          }
+        }
       },
-      "yuki": {
+      "yuri": {
         "introduction": "The timid and mysterious one who finds comfort in the world of books",
-        "body": "Yuri, the quiet bookworm, reserves her passionate side for those who can more deeply understand her enigmatic mind."
+        "body": "Yuri, the quiet bookworm, reserves her passionate side for those who can more deeply understand her enigmatic mind.",
+        "img": {
+          "normal": {
+            "src": "/assets/characters/normal/yuri",
+            "alt": ""
+          },
+          "chibi": {
+            "src": "/assets/characters/chibi/yuri-chibi",
+            "alt": ""
+          }
+        }
       },
       "monika": {
         "introduction": "The leader of the club! That’s me!",
-        "body": "Monika, the superstar President of the Literature Club, will keep you on track for a perfect ending. Monika is always there to give you a guiding hand, both in literature and in love!"
+        "body": "Monika, the superstar President of the Literature Club, will keep you on track for a perfect ending. Monika is always there to give you a guiding hand, both in literature and in love!",
+        "img": {
+          "normal": {
+            "src": "/assets/characters/normal/monika",
+            "alt": ""
+          },
+          "chibi": {
+            "src": "/assets/characters/chibi/monika-chibi",
+            "alt": ""
+          }
+        }
       }
     }
   },
@@ -154,8 +238,7 @@
       "title": "Will you write the way into her heart?",
       "link": "https://ddlc.plus/buy",
       "img": {
-        "avif": "/assets/others/DDLC_PackShot.avif",
-        "webp": "/assets/others/DDLC_PackShot.webp",
+        "src": "/assets/others/DDLC_PackShot",
         "alt": "A bundle of 3 boxes of the game in each platform, stickers, soundtracks and more."
       }
     },
@@ -163,8 +246,7 @@
       "title": "Shop Merchandise",
       "link": "https://ddlc.plus/merch",
       "img": {
-        "avif": "/assets/others/Plushies.avif",
-        "webp": "/assets/others/Plushies.webp",
+        "src": "/assets/others/Plushies",
         "alt": "Plushies of Monika, Natsuki, Yuri and Sayori."
       }
     }

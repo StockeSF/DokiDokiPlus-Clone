@@ -1,0 +1,53 @@
+---
+import type { SectionLayout, FeaturesContent } from '@landing/env'
+
+import { Icon } from 'astro-icon/components'
+
+import FeaturesDesktop from '@landing/components/FeaturesDesktop.svelte'
+import FeaturesMobile from '@landing/components/FeaturesMobile.astro'
+
+type Props = SectionLayout<FeaturesContent>
+
+const { id, statics } = Astro.props
+---
+
+<section id={id} class="container features">
+  <picture class="bg" aria-hidden="true">
+    <source srcset="/assets/backgrounds/features_bg.avif" type="image/avif">
+    <img
+      src="/assets/backgrounds/features_bg.avif"
+      class="bg__image"
+      decoding="async"
+      loading="lazy"
+      alt=""
+    />
+  </picture>
+
+  <FeaturesMobile statics={statics} />
+
+  <FeaturesDesktop statics={statics} client:visible={{ rootMargin: '150px' }}>
+    <Icon name="plus" size={20} />
+  </FeaturesDesktop>
+
+  <footer class="features__footer">
+    <picture class="features__doki-logo">
+      <source srcset={`${statics.img.src}.avif`} type="image/avif">
+      <img
+        src={`${statics.img.src}.webp`}
+        width="50"
+        height="35"
+        alt={statics.img.alt}
+      />
+    </picture>
+
+    <app-clock type="12" class="features__clock">
+      <time class="features__clock-ph">00:00 AM</time>
+    </app-clock>
+  </footer>
+</section>
+
+<script src="../../lib/app-clock.ts"></script>
+
+<style is:global>
+  @import url('../../styles/features.css');
+</style>

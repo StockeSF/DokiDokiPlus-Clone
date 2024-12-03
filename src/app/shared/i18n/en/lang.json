@@ -27,24 +27,21 @@
       "esrb": {
         "title": "North America",
         "img": {
-          "avif": "/assets/others/DDLCESRB.avif",
-          "webp": "/assets/others/DDLCESRB.webp",
+          "src": "/assets/others/DDLCESRB",
           "alt": "Mature 17+ ESRB"
         }
       },
       "pegi18": {
         "title": "Europe",
         "img": {
-          "avif": "/assets/others/PEGI18.avif",
-          "webp": "/assets/others/PEGI18.webp",
+          "src": "/assets/others/PEGI18",
           "alt": "PEGI 18"
         }
       },
       "f18": {
         "title": "Germany",
         "img": {
-          "avif": "/assets/others/f_18.avif",
-          "webp": "/assets/others/f_18.webp",
+          "src": "/assets/others/f_18",
           "alt": "USK ab 18"
         }
       }

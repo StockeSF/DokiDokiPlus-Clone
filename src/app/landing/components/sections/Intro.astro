@@ -3,11 +3,11 @@ import type { IntroLayout, IntroContent, TrailerContent } from '@landing/env'
 
 import { Icon } from 'astro-icon/components'
 
+import Trailer from '@landing/components/ui/Trailer.svelte'
 import TrailerBtn from '@landing/components/ui/TrailerBtn.svelte'
 import StoreList from '@landing/components/ui/StoreList.astro'
 
-interface Props extends IntroLayout {
-  statics: IntroContent
+interface Props extends IntroLayout<IntroContent> {
   trailerStatics: TrailerContent
 }
 
@@ -28,20 +28,27 @@ const charactersList = Object.entries(statics.charactersImg)
           alt=""
         />
       </picture>
-  
-      <div>
+
+      <div class="intro__logo-wrapper">
         <picture>
-    
+          <source srcset={`${statics.logoImg.src}.avif`} type="image/avif">
+          <img
+            src={`${statics.logoImg.src}.webp`}
+            class="intro__logo"
+            decoding="async"
+            fetchpriority="high"
+            alt={statics.logoImg.alt}
+          />
         </picture>
   
-        <h1 class="intro__title">{statics.title}</h1>
+        <h1 class="intro__title" set:html={statics.title} />
       </div>
-  
-      {charactersList.map(([key, { avif, webp, alt }]) => (
+
+      {charactersList.map(([key, { src, alt }]) => (
         <picture class={`intro__character intro__character--${key}`}>
-          <source srcset={avif} type="image/avif" />
+          <source srcset={`${src}.avif`} type="image/avif" />
           <img
-            src={webp}
+            src={`${src}.webp`}
             decoding="async"
             fetchpriority="high"
             class="intro__character-image"
@@ -55,6 +62,10 @@ const charactersList = Object.entries(statics.charactersImg)
   <StoreList storeList={statics.storeList} />
 
   <article id={id[1]} class="intro__trailer">
+    <Trailer trailerStatics={trailerStatics} client:only="svelte">
+      <Icon name="x" size="42" class="dokibtn--trailer-x" />
+    </Trailer>
+
     <TrailerBtn trailerStatics={trailerStatics} client:visible>
       <Icon name="player-play" size="32" />
     </TrailerBtn>

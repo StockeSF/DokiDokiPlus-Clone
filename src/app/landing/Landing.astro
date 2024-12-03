@@ -6,6 +6,8 @@ import Layout from '@shared/layouts/Layout.astro'
 
 import Intro from '@landing/components/sections/Intro.astro'
 import Reviews from '@landing/components/sections/Reviews.astro'
+import Features from '@landing/components/sections/Features.astro'
+import Characters from '@landing/components/sections/Characters.astro'
 import BuyNow from '@landing/components/sections/BuyNow.astro'
 import Newsletter from '@landing/components/sections/Newsletter.astro'
 
@@ -25,6 +27,8 @@ const KEYS = lang.keys
 
   <div class="content">
     <Reviews id={KEYS[2]} statics={lang.reviews} />
+    <Features id={KEYS[3]} statics={lang.features} />
+    <Characters id={KEYS[4]} statics={lang.characters} />
     <BuyNow id={KEYS[5]} statics={lang.buynow} />
     <Newsletter id={KEYS[6]} statics={lang.newsletter} />
   </div>

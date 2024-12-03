@@ -1,5 +1,5 @@
 ---
-import type { FooterContent } from '@/app/env'
+import type { FooterContent } from '@shared/env'
 
 import { Icon } from 'astro-icon/components'
 
@@ -38,9 +38,9 @@ const { statics } = Astro.props
       {Object.entries(statics.disclaimer).map(([key, { title, img }]) => (
         <li class="footer__rating">
           <picture>
-            <source srcset={img.avif} type="image/avif">
+            <source srcset={`${img.src}.avif`} type="image/avif">
             <img
-              src={img.webp}
+              src={`${img.src}.webp`}
               class={`footer__rate-img footer__rate-img--${key}`}
               decoding="async"
               fetchpriority="low"

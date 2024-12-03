@@ -1,0 +1,53 @@
+---
+import type { FeaturesStatic } from '@landing/env'
+
+import { Icon } from 'astro-icon/components'
+
+type Props = FeaturesStatic
+
+const { statics } = Astro.props
+---
+
+<div class="features__mobile">
+  {Object.entries(statics.featureList).map(([key, { img, title, description }], i) => (
+		<article
+			class:list={[
+				'feature-card',
+				{ 'feature-card--left': !(i % 2) },
+				{ 'feature-card--right': i % 2 }
+			]}
+			data-animation="feature-item"
+		>
+			<header class="feature-card__header">
+				<div class="feature-card__title-wrapper">
+					<img
+						src={`/assets/others/${key}-icon-white.webp`}
+						width={24}
+						height={24}
+						loading="lazy"
+						alt=""
+					/>
+
+					<h2 class="feature-card__title">{title}</h2>
+				</div>
+
+				<Icon name="plus" size={16} />
+			</header>
+
+			<picture>
+				<source srcset={`${img.src}.avif`} type="image/avif" />
+				<img
+					src={`${img.src}.webp`}
+					decoding="async"
+					loading="lazy"
+					class="feature-card__img"
+					alt=""
+				/>
+			</picture>
+
+			<p class="feature-card__text">
+				{description}
+			</p>
+		</article>
+  ))}
+</div>

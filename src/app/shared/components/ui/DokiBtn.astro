@@ -17,6 +17,7 @@ const variantClasses = {
 }
 
 const typeClasses = {
+	trailer: 'dokibtn--trailer',
 	'g&m': 'dokibtn--gm',
 	newsletter: 'dokibtn--newsletter',
 	footer: 'dokibtn--footer'
@@ -34,6 +35,6 @@ const classes = [
   <slot />
 </Tag>
 
-<style>
+<style is:global>
   @import url('../../styles/dokibtn.css');
 </style>

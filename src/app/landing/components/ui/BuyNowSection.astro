@@ -5,7 +5,7 @@ interface Props {
   title: string
   btnTitle: string
   link: string
-  img: Record<'avif' | 'webp' | 'alt', string>
+  img: Record<'src' | 'alt', string>
   iterator: number
 }
 
@@ -19,9 +19,9 @@ const { title, link, btnTitle, img, iterator } = Astro.props
   ]}
 >
   <picture class="buynow__picture">
-    <source srcset={img.avif} type="image/avif">
+    <source srcset={`${img.src}.avif`} type="image/avif">
     <img
-      src={img.webp}
+      src={`${img.src}.webp`}
       class="buynow__img"
       decoding="async"
       loading="lazy"

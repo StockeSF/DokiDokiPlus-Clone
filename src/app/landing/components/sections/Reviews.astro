@@ -3,9 +3,7 @@ import type { SectionLayout, ReviewsContent } from '@landing/env'
 
 import { Icon } from 'astro-icon/components'
 
-interface Props extends SectionLayout {
-  statics: ReviewsContent
-}
+type Props = SectionLayout<ReviewsContent> 
 
 const { id, statics } = Astro.props
 ---
@@ -14,22 +12,15 @@ const { id, statics } = Astro.props
   <h2 class="reviews__title">{statics.title}</h2>
   <p class="reviews__body">{statics.body}</p>
 
-  <swiper-container
-    init="false"
-    slides-per-view="auto"
-    speed="1500"
-    loop="true"
-    centered-slides="true"
-    class="reviews__swiper"
-  >
-    {Object.entries(statics.reviewList).map(([key, { text, ...sizes }]) => (
+  <swiper-container init="false" class="reviews__swiper">
+    {statics.reviewList.map(({ icon, text, ...sizes }) => (
       <swiper-slide class="reviews__slide">
         <p class="reviews__quote">"</p>
 
         <div class="reviews__review-wrapper">
           <p class="reviews__review">{text}</p>
 
-          <Icon name={key} {...sizes} />
+          <Icon name={icon} {...sizes} />
         </div>
       </swiper-slide>
     ))}
@@ -48,7 +39,11 @@ const { id, statics } = Astro.props
     autoplay: {
       pauseOnMouseEnter: true,
       delay: 2000
-    }
+    },
+    slidesPerView: 'auto',
+    speed: 1500,
+    loop: true,
+    centeredSlides: true
   }
 
   Object.assign(swiper, swiperParams)

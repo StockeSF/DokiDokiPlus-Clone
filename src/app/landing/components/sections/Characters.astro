@@ -1,0 +1,31 @@
+---
+import type { SectionLayout, CharactersContent } from '@landing/env'
+
+import CharacterContainer from '@landing/components/CharacterContainer.svelte'
+
+type Props = SectionLayout<CharactersContent>
+
+const { id, statics } = Astro.props
+---
+
+<section id={id} class="container characters">
+  <picture class="bg" aria-hidden="true">
+    <source srcset="/assets/backgrounds/club.avif" type="image/avif">
+    <img
+      src="/assets/backgrounds/club.webp"
+      class="bg__image"
+      decoding="async"
+      loading="lazy"
+      alt=""
+    />
+  </picture>
+
+  <CharacterContainer
+    statics={statics}
+    client:visible={{ rootMargin: '150px' }}
+  />
+</section>
+
+<style is:global>
+  @import url('../../styles/characters.css');
+</style>

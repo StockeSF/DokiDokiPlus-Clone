@@ -1,5 +1,3 @@
-/// <reference path="../../.astro/types.d.ts" />
-
 import type { labels } from '@shared/i18n/config'
 
 type I18N = typeof labels

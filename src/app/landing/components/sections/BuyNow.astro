@@ -3,9 +3,7 @@ import type { SectionLayout, BuyNowContent } from '@landing/env'
 
 import BuyNowSection from '@landing/components/ui/BuyNowSection.astro'
 
-interface Props extends SectionLayout {
-  statics: BuyNowContent
-}
+type Props = SectionLayout<BuyNowContent>
 
 const { id, statics } = Astro.props
 ---

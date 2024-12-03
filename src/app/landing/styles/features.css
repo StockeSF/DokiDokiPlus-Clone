@@ -1,0 +1,197 @@
+.features {
+  background: #ddb3ff;
+  place-items: unset;
+  grid-template-rows: 1fr auto;
+}
+
+.features__mobile {
+  width: 100%;
+  display: grid;
+  gap: 4.5rem;
+  padding: 5rem 0;
+  position: relative;
+  z-index: 20;
+}
+
+.features__desktop {
+  display: none;
+  position: relative;
+  width: inherit;
+  height: inherit;
+}
+
+.features__desktop-item {
+  background: transparent;
+  transition: background, color 150ms ease
+}
+
+.features__desktop-item:hover,
+.features__desktop-item--active {
+  background: linear-gradient(to right, var(--doki-magenta), var(--doki-purple))
+}
+
+.feature-card {
+  position: relative;
+  display: grid;
+  flex-direction: column;
+  width: 91%;
+}
+
+.feature-card--left {
+  justify-self: flex-start;
+  padding-inline-start: 1rem;
+}
+
+.feature-card--right {
+  justify-self: flex-end;
+  padding-inline-end: 1rem;
+}
+
+.feature-card--pc {
+  position: absolute;
+  width: min(100%, 48rem);
+}
+
+.feature-card--pc-box {
+  position: absolute;
+  right: 3rem;
+  bottom: 5rem;
+  width: 28.2ch
+}
+
+.feature-card__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, var(--doki-magenta), var(--doki-purple));
+  padding: .5rem;
+  color: white;
+}
+
+.feature-card__header--pc {
+  height: calc(34px + .5rem);
+  justify-content: flex-end;
+}
+
+.feature-card__header--pc-box {
+  background: var(--doki-purple);
+  justify-content: unset;
+  gap: .5rem;
+  border-bottom: 2px solid var(--doki-pink);
+}
+
+.feature-card__title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.feature-card__title {
+  color: white;
+  font-family: var(--aller);
+  font-size: clamp(1rem, .25vw + .5rem, 1.125rem);
+}
+
+.feature-card__title--pc-box {
+  font-size: .875rem
+}
+
+.feature-card__img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  display: inline-block
+}
+
+.feature-card__text {
+  padding: 1.5rem;
+  background: var(--doki-box);
+  color: var(--doki-purple);
+  font-size: clamp(1rem, .35vw + 1rem, 1.125rem);
+  line-height: 1.75rem;
+}
+
+.feature-card__text--pc-box {
+  font-size: clamp(.875rem, .5vw + .6rem, .9375rem);
+  padding: 1.35rem 1.3rem;
+  line-height: 1.35rem;
+}
+
+.features__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 50;
+  background-color: var(--doki-taskbar-color);
+}
+
+.features__footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('/assets/backgrounds/dot-pattern-pink.svg');
+  background-position: 50%;
+  background-size: 20px;
+  opacity: .3;
+}
+
+.features__clock,
+.features__doki-logo {
+  position: relative;
+  z-index: 1;
+}
+
+.features__clock {
+  display: none;
+  margin-right: 1.5rem;
+}
+
+.features__clock-ph {
+  font-family: var(--riffic);
+  color: var(--doki-purple);
+  font-size: clamp(1.25rem, 1.25vw + .25rem, 1.5rem);
+}
+
+.features__doki-logo {
+  display: grid;
+  place-content: center;
+  width: 140px;
+  height: 100%;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, .2);
+}
+
+@media screen and (min-width: 1024px) {
+  .features {
+    aspect-ratio: 16 / 9;
+    max-height: 100vh;
+    max-height: 100dvh;
+  }
+
+  .features__mobile {
+    display: none;
+  }
+
+  .features__desktop {
+    display: grid;
+    place-items: center;
+  }
+
+  .feature-card--pc {
+    aspect-ratio: 16 / 9;
+  }
+
+  .features__clock {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .features__desktop-preview {
+    width: min(100%, 56rem);
+  }
+}

@@ -3,9 +3,7 @@ import type { SectionLayout, NewsletterContent } from '@landing/env'
 
 import DokiBtn from '@shared/components/ui/DokiBtn.astro'
 
-interface Props extends SectionLayout {
-  statics: NewsletterContent
-}
+type Props = SectionLayout<NewsletterContent>
 
 const { id, statics } = Astro.props
 ---
