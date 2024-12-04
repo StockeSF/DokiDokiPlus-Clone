@@ -15,10 +15,10 @@ const { id, statics, trailerStatics } = Astro.props
 const charactersList = Object.entries(statics.charactersImg)
 ---
 
-<section class="container container--intro intro">
+<section id={id[0]} class="container container--intro intro">
   <article class="intro__hero">
-    <div id={id[0]} class="intro__hero-wrapper">
-      <picture class="bg bg--intro" aria-hidden="true">
+    <div class="intro__hero-wrapper">
+      <picture class="bg bg--intro" aria-hidden="true" data-translate-style="bg">
         <source srcset="/assets/backgrounds/WindowScreen_BG.avif" type="image/avif">
         <img
           src="/assets/backgrounds/WindowScreen_BG.webp"
@@ -29,30 +29,33 @@ const charactersList = Object.entries(statics.charactersImg)
         />
       </picture>
 
-      <div class="intro__logo-wrapper">
+      <div class="intro__logo-wrapper" data-translate-style="logo">
         <picture>
           <source srcset={`${statics.logoImg.src}.avif`} type="image/avif">
           <img
             src={`${statics.logoImg.src}.webp`}
-            class="intro__logo"
+            class="intro__logo fade"
             decoding="async"
             fetchpriority="high"
             alt={statics.logoImg.alt}
           />
         </picture>
   
-        <h1 class="intro__title" set:html={statics.title} />
+        <h1 id="intro-title" class="intro__title fade" set:html={statics.title} />
       </div>
 
-      {charactersList.map(([key, { src, alt }]) => (
-        <picture class={`intro__character intro__character--${key}`}>
-          <source srcset={`${src}.avif`} type="image/avif" />
+      {charactersList.map(([key, { img, translateStyle }]) => (
+        <picture
+          class={`intro__character intro__character--${key}`}
+          data-translate-style={translateStyle}
+        >
+          <source srcset={`${img.src}.avif`} type="image/avif" />
           <img
-            src={`${src}.webp`}
+            src={`${img.src}.webp`}
             decoding="async"
             fetchpriority="high"
-            class="intro__character-image"
-            alt={alt}
+            class="intro__character-image fade"
+            alt={img.alt}
           />
         </picture>
       ))}
@@ -71,6 +74,35 @@ const charactersList = Object.entries(statics.charactersImg)
     </TrailerBtn>
   </article>
 </section>
+
+<script>
+  import { $, $$ } from '@shared/utils/dom-selector'
+
+  const frontCharacters = $$('[data-translate-style="char-front"] img')
+  const backCharacters = $$('[data-translate-style="char-back"] img')
+  const logo = $('[data-translate-style="logo"] img')
+  const title = $('#intro-title')
+
+  window.addEventListener('DOMContentLoaded', () => {
+    backCharacters.forEach((char, i) => {
+      char.classList.add('fade--back')
+      if (i == 0) char.classList.add('fade--right')
+      if (i == 1) char.classList.add('fade--left')
+    })
+
+    frontCharacters.forEach((char, i) => {
+      char.classList.add('fade--front')
+
+      if (i == 0) char.classList.add('fade--right')
+      if (i == 1) char.classList.add('fade--left')
+    })
+
+    logo!.classList.add('fade--up')
+    logo!.classList.add('fade--logo')
+    title!.classList.add('fade--up')
+    title!.classList.add('fade--title')
+  }, { once: true })
+</script>
 
 <style is:global>
   @import url('../../styles/intro.css');

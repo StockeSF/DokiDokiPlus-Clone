@@ -1,8 +1,12 @@
 ---
+import { Icon } from 'astro-icon/components'
+
 import { langSelector } from '@shared/utils/i18n'
 import { labels } from '@landing/i18n/config'
 
 import Layout from '@shared/layouts/Layout.astro'
+
+import Menu from '@landing/components/layout/Menu.svelte'
 
 import Intro from '@landing/components/sections/Intro.astro'
 import Reviews from '@landing/components/sections/Reviews.astro'
@@ -18,7 +22,11 @@ const SEO = lang.seo
 const KEYS = lang.keys
 ---
 
-<Layout title={SEO.title} description={SEO.description}>
+<Layout title={SEO.title} description={SEO.description} isLanding={true}>
+  <Menu keys={KEYS} client:load>
+    <Icon name="menu-2" size="36" />
+  </Menu>
+
   <Intro
     id={[KEYS[0], KEYS[1]]}
     statics={lang.intro}
@@ -33,3 +41,18 @@ const KEYS = lang.keys
     <Newsletter id={KEYS[6]} statics={lang.newsletter} />
   </div>
 </Layout>
+
+<script>
+  import { $, $$ } from '@shared/utils/dom-selector'
+
+  import { TranslateAnimation } from '@landing/utils/translate-animation'
+
+  const elements = $$('[data-translate-style]')
+  
+  const translate = new TranslateAnimation(elements)
+  translate.init()
+</script>
+
+<style is:global>
+  @import url('./styles/translate.css');
+</style>

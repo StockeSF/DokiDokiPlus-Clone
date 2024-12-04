@@ -1,0 +1,33 @@
+.translate {
+  --_placeholder-value: unset;
+  --_window-value: unset;
+  --_per-value: unset;
+  --_direction: -1;
+  --_calc: calc(var(--_window-value) * calc(var(--_per-value) * var(--_direction)));
+
+  transform: translateY(var(--_calc, var(--_placeholder-value))) ;
+  transition: transform 50ms ease-in;
+}
+
+.translate--logo {
+  --_placeholder-value: -40px;
+  --_per-value: .7;
+  --_calc: calc(var(--_window-value) / calc(var(--_per-value) * var(--_direction)));
+}
+
+.translate--bg {
+  --_per-value: .02;
+}
+
+.translate--char-back {
+  --_per-value: .03;
+}
+
+.translate--char-front {
+  --_per-value: .06;
+}
+
+.translate--buynow {
+  --_per-value: .014;
+  --_direction: 1;
+}

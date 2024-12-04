@@ -1,4 +1,11 @@
 {
+  "header": {
+    "links": {
+      "Home": "/",
+      "Show Merch": "https://ddlc.plus/merch",
+      "Buy Game": "https://ddlc.plus/buy"
+    }
+  },
   "footer": {
     "presskit": {
       "title": "Get the Press Kit",

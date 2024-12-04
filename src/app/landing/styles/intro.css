@@ -89,8 +89,6 @@
   z-index: 0;
 }
 
-
-
 .intro__character-image {
   display: inline-block;
   object-fit: scale-down;
@@ -107,7 +105,8 @@
   --_primary-color: var(--doki-pink);
 
   background: var(--doki-pink);
-  width: 100%;
+  width: min(100%, 640px);
+  margin: auto;
   display: grid;
   place-items: center;
   position: relative;
@@ -136,7 +135,7 @@
   inset: 0;
   display: grid;
   place-items: center;
-  z-index: 100;
+  z-index: 55;
 }
 
 .trailer__bg {

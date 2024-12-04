@@ -1,13 +1,11 @@
 ---
-import type { FooterContent } from '@shared/env'
+import type { StaticsLayout, FooterContent } from '@shared/env'
 
 import { Icon } from 'astro-icon/components'
 
 import DokiBtn from '@shared/components/ui/DokiBtn.astro'
 
-interface Props {
-  statics: FooterContent
-} 
+type Props = StaticsLayout<FooterContent>
 
 const { statics } = Astro.props
 ---
@@ -55,7 +53,3 @@ const { statics } = Astro.props
     </ul>
   </div>
 </footer>
-
-<style is:global>
-  @import url('../../styles/footer.css');
-</style>

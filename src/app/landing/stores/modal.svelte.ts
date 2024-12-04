@@ -1,4 +1,4 @@
-export function createTrailerStore () {
+export function createModal () {
   let isActive = $state(false)
   
   const clickHandler = () => {
@@ -11,4 +11,6 @@ export function createTrailerStore () {
   }
 }
 
-export const trailer = createTrailerStore()
+export const trailer = createModal()
+
+export const menu = createModal()

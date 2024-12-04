@@ -1,5 +1,5 @@
 <script>
-  import { trailer } from '@landing/stores/trailer.svelte'
+  import { trailer } from '@landing/stores/modal.svelte'
 
   let { trailerStatics, children } = $props()
 </script>

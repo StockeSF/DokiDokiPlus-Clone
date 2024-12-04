@@ -1,0 +1,34 @@
+---
+import type { HeaderLayout, HeaderContent } from '@shared/env'
+
+import { getRelativeLocaleUrl } from 'astro:i18n'
+
+type Props = HeaderLayout<HeaderContent>
+
+import DokiBtn from '@shared/components/ui/DokiBtn.astro'
+
+const { currentLocale = 'en' } = Astro
+const { statics, isLanding = false } = Astro.props
+const KEYS = Object.keys(statics.links)
+const NAV = Object.entries(statics.links).slice(1)
+---
+
+<header class="header">
+  {!isLanding && (
+    <DokiBtn as="a" href={getRelativeLocaleUrl(currentLocale, statics.links.Home)} class="header-link header-link--home" typeBtn="header-home">
+      {KEYS[0]}
+    </DokiBtn>
+  )}
+
+  <nav>
+    <ul class="header-list">
+      {NAV.map(([name, link]) => (
+        <li>
+          <DokiBtn as="a" href={link} variant="sm" typeBtn="header">
+            {name}
+          </DokiBtn>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>

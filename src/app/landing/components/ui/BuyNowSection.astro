@@ -18,7 +18,7 @@ const { title, link, btnTitle, img, iterator } = Astro.props
     { "buynow__section--even": iterator % 2 }
   ]}
 >
-  <picture class="buynow__picture">
+  <picture class="buynow__picture" data-translate-style="buynow">
     <source srcset={`${img.src}.avif`} type="image/avif">
     <img
       src={`${img.src}.webp`}

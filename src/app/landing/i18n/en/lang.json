@@ -11,20 +11,32 @@
     },
     "charactersImg": {
       "sayori": {
-        "src": "/assets/characters/normal/sayori-724",
-        "alt": ""
+        "translateStyle": "char-back",
+        "img": {
+          "src": "/assets/characters/normal/sayori-724",
+          "alt": ""
+        }
       },
       "yuri": {
-        "src": "/assets/characters/normal/yuri-724",
-        "alt": ""
+        "translateStyle": "char-front",
+        "img": {
+          "src": "/assets/characters/normal/yuri-724",
+          "alt": ""
+        }
       },
       "monika": {
-        "src": "/assets/characters/normal/monika-724",
-        "alt": ""
+        "translateStyle": "char-front",
+        "img": {
+          "src": "/assets/characters/normal/monika-724",
+          "alt": ""
+        }
       },
       "natsuki": {
-        "src": "/assets/characters/normal/natsuki-724",
-        "alt": ""
+        "translateStyle": "char-back",
+        "img": {
+          "src": "/assets/characters/normal/natsuki-724",
+          "alt": ""
+        }
       }
     },
     "storeList": {

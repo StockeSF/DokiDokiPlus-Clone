@@ -2,7 +2,7 @@
   import { onMount } from 'svelte'
   import { scale, fade } from 'svelte/transition'
 
-  import { trailer } from '@landing/stores/trailer.svelte'
+  import { trailer } from '@landing/stores/modal.svelte'
 
   let { trailerStatics, children } = $props()
 
@@ -18,7 +18,7 @@
       aria-label={trailerStatics.arias['aria-close-trailer']}
     ></button>
   
-    <div class="trailer__video" transition:scale={{ opacity: 0, start: 0.3, duration: 750 }}>
+    <div class="trailer__video" transition:scale={{ opacity: 0, start: 0.3, duration: 500 }}>
       <button
         class="dokibtn dokibtn--trailer dokibtn--trailer-close"
         onclick={trailer.clickHandler}

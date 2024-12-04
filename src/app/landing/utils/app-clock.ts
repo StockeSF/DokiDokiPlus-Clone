@@ -21,7 +21,7 @@ class AppClock extends HTMLElement {
     shadow.appendChild(this.timeContent)
   }
 
-  getDate() {
+  public getDate() {
     let date = new Date()
 
     let hour = date.getHours()
@@ -31,18 +31,18 @@ class AppClock extends HTMLElement {
     return { hour, minutes, seconds }
   }
 
-  getPeriod(hour: number) {
+  public getPeriod(hour: number) {
     if (hour >= 12) return 'PM'
     return 'AM'
   }
 
-  convertTo12(hour: number) {
+  public convertTo12(hour: number) {
     if (hour === 0) return 12
     if (hour > 12) return hour - 12
     return hour
   }
 
-  setTime() {
+  private setTime() {
     let date = this.getDate()
     let AMPM = this.getPeriod(date.hour)
     let type = this.getAttribute('type') ?? '24'
@@ -56,7 +56,7 @@ class AppClock extends HTMLElement {
     this.timeContent.innerText = `${convertedHour}:${convertedMinutes} ${AMPM}`
   }
 
-  setIntervals(firstTime?: boolean) {
+  private setIntervals(firstTime?: boolean) {
     const seconds = 60000
 
     if (firstTime) {

@@ -17,6 +17,8 @@ const variantClasses = {
 }
 
 const typeClasses = {
+	header: 'dokibtn--header',
+	'header-home': 'dokibtn--header-home',
 	trailer: 'dokibtn--trailer',
 	'g&m': 'dokibtn--gm',
 	newsletter: 'dokibtn--newsletter',
@@ -34,7 +36,3 @@ const classes = [
 <Tag class:list={classes} {...rest}>
   <slot />
 </Tag>
-
-<style is:global>
-  @import url('../../styles/dokibtn.css');
-</style>

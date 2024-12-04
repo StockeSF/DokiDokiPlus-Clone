@@ -6,6 +6,7 @@ import { Icon } from 'astro-icon/components'
 type Props = SectionLayout<ReviewsContent> 
 
 const { id, statics } = Astro.props
+const duplicatedList = [...statics.reviewList, ...statics.reviewList]
 ---
 
 <section id={id} class="container container--fit-h reviews">
@@ -13,7 +14,7 @@ const { id, statics } = Astro.props
   <p class="reviews__body">{statics.body}</p>
 
   <swiper-container init="false" class="reviews__swiper">
-    {statics.reviewList.map(({ icon, text, ...sizes }) => (
+    {duplicatedList.map(({ icon, text, ...sizes }) => (
       <swiper-slide class="reviews__slide">
         <p class="reviews__quote">"</p>
 
@@ -43,6 +44,7 @@ const { id, statics } = Astro.props
     slidesPerView: 'auto',
     speed: 1500,
     loop: true,
+    grabCursor: true,
     centeredSlides: true
   }
 
