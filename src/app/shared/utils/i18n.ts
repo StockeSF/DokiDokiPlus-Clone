@@ -1,5 +1,4 @@
 type LanguageKeys = keyof typeof languageList
-type DefaultLang = typeof defaultLang 
 
 export const languageList = {
   en: 'English'
