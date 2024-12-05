@@ -18,16 +18,19 @@
   color: var(--doki-light-pink);
 }
 
-.reviews__swiper {
+.embla {
   margin-top: 2rem;
-  display: flex;
   overflow: hidden;
   min-height: 225px;
   cursor: grab;
 }
 
-.reviews__slide {
-  --_width: 76vw;
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  --_width: 16.5%;
 
   position: relative;
   width: var(--_width);
@@ -68,14 +71,14 @@
 }
 
 @media screen and (min-width: 640px) {
-  .reviews__slide {
-    --_width: 32.5vw;
+  .embla__slide {
+    --_width: 14%;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .reviews__slide {
-    --_width: 27vw;
+  .embla__slide {
+    --_width: 16.5%;
     padding: .5vw 3vw;
   }
 }

@@ -13,43 +13,36 @@ const duplicatedList = [...statics.reviewList, ...statics.reviewList]
   <h2 class="reviews__title">{statics.title}</h2>
   <p class="reviews__body">{statics.body}</p>
 
-  <swiper-container init="false" class="reviews__swiper">
-    {duplicatedList.map(({ icon, text, ...sizes }) => (
-      <swiper-slide class="reviews__slide">
-        <p class="reviews__quote">"</p>
+  <div class="embla">
+    <div class="embla__container">
+      {duplicatedList.map(({ icon, text, ...sizes }) => (
+        <div class="embla__slide">
+          <p class="reviews__quote">"</p>
 
-        <div class="reviews__review-wrapper">
-          <p class="reviews__review">{text}</p>
+          <div class="reviews__review-wrapper">
+            <p class="reviews__review">{text}</p>
 
-          <Icon name={icon} {...sizes} />
+            <Icon name={icon} {...sizes} />
+          </div>
         </div>
-      </swiper-slide>
-    ))}
-  </swiper-container>
+      ))}
+    </div>
+  </div>
 </section>
 
 <script>
-  import { register, type SwiperContainer } from 'swiper/element/bundle'
+  import type { EmblaOptionsType } from 'embla-carousel'
+  import EmblaCarousel from 'embla-carousel'
+  import Autoplay from 'embla-carousel-autoplay'
   import { $ } from '@shared/utils/dom-selector'
 
-  register()
+  const swiper = $('.embla') as HTMLElement
 
-  const swiper = $('swiper-container') as SwiperContainer
+  const plugins = [Autoplay({ delay: 3500, stopOnMouseEnter: true })]
 
-  const swiperParams = {
-    autoplay: {
-      pauseOnMouseEnter: true,
-      delay: 2000
-    },
-    slidesPerView: 'auto',
-    speed: 1500,
-    loop: true,
-    grabCursor: true,
-    centeredSlides: true
-  }
+  const options: EmblaOptionsType = { loop: true, duration: 35 }
 
-  Object.assign(swiper, swiperParams)
-  swiper.initialize()
+  EmblaCarousel(swiper, options, plugins)
 </script>
 
 <style>

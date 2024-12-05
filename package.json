@@ -14,8 +14,9 @@
     "@justinribeiro/lite-youtube": "^1.6.0",
     "astro": "^4.16.16",
     "astro-icon": "^1.1.4",
+    "embla-carousel": "^8.5.1",
+    "embla-carousel-autoplay": "^8.5.1",
     "svelte": "^5.2.12",
-    "swiper": "^11.1.15",
     "typescript": "^5.7.2"
   }
 }
