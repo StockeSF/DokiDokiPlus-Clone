@@ -6,7 +6,8 @@ export const languageList = {
 
 export const labels = {
   en: {
-    keys: Object.keys(en).slice(1),
+    keys: Object.keys(en).slice(2),
+    ui: en.ui,
     seo: en.seo,
     intro: en.intro,
     trailer: en.trailer,

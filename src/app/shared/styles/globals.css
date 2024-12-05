@@ -149,7 +149,7 @@ body {
 .doki-box {
   --_bg-color: var(--doki-box);
   --_fs: clamp(1rem, 1.5vw, 2rem);
-  
+
   position: absolute;
   inset: 0;
   display: inline-block;
@@ -186,7 +186,8 @@ body {
   --_fs: clamp(1.25rem, 1.75vw, 1.75rem);
 
   width: 100%;
-  padding: 110px 0 1.5vw 0;
+  padding-top: 110px;
+  padding-bottom: 4vw;
 }
 
 .doki-box--features {
@@ -220,17 +221,20 @@ body {
 }
 
 .doki-box__btn {
+  --_pad: .5rem 1.5rem;
+
   width: inherit;
   height: inherit;
   display: flex;
   align-items: center;
-  padding: .5vw 3vw;
+  padding: var(--_pad);
   gap: 1.5rem;
   cursor: inherit;
 }
 
 .doki-box__btn--features {
-  padding: 1.25rem 1rem;
+  --_pad: 1.25rem 1rem;
+
   font-size: 1rem;
 }
 
@@ -249,7 +253,6 @@ body {
   font-family: var(--aller);
   font-weight: 400;
   transition: color 150ms ease;
-  text-transform: capitalize;
 }
 
 .doki-box__text--features {
@@ -257,7 +260,18 @@ body {
   max-width: 20.5ch;
 }
 
+@media screen and (min-width: 640px) {
+  .doki-box--menuLanding {
+    width: 50vw;
+    padding-bottom: 2vw;
+  }
+}
+
 @media screen and (min-width: 768px) {
+  .doki-box__btn--menuLanding {
+    --_pad: .5vw 3vw;
+  }
+
   .doki-box--menuLanding {
     width: 40vw;
   }
@@ -266,6 +280,7 @@ body {
 @media screen and (min-width: 1024px) {
   .doki-box--menuLanding {
     width: 28vw;
+    padding-bottom: 1.5vw;
   }
 }
 
@@ -291,6 +306,10 @@ body {
 
 .dokibtn:hover {
   background: var(--_hover-color);
+}
+
+.dokibtn__icon-menu {
+  display: inline-flex;
 }
 
 .dokibtn--trailer {
@@ -574,7 +593,6 @@ body {
 }
 
 .fade--right {
-
   --_anim-name: fadeRight;
 }
 

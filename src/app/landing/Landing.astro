@@ -1,6 +1,4 @@
 ---
-import { Icon } from 'astro-icon/components'
-
 import { langSelector } from '@shared/utils/i18n'
 import { labels } from '@landing/i18n/config'
 
@@ -23,9 +21,7 @@ const KEYS = lang.keys
 ---
 
 <Layout title={SEO.title} description={SEO.description} isLanding={true}>
-  <Menu keys={KEYS} client:load>
-    <Icon name="menu-2" size="36" />
-  </Menu>
+  <Menu keys={KEYS} statics={lang.ui} client:load />
 
   <Intro
     id={[KEYS[0], KEYS[1]]}

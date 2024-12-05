@@ -3,11 +3,22 @@
 
   import { fade, scale } from 'svelte/transition'
 
-  let { keys, statics, children } = $props()
+  import Burger from '@/assets/svelte-icons/Burger.svelte'
+  import XIcon from '@/assets/svelte-icons/XIcon.svelte'
+
+  let { keys, statics } = $props()
 </script>
 
 <button onclick={menu.clickHandler} class="dokibtn dokibtn--header-menu header-link header-link--home">
-  {@render children()}
+  {#if !menu.value}
+    <div in:fade={{ duration: 300 }} class="dokibtn__icon-menu">
+      <Burger size={36} />
+    </div>
+  {:else}
+    <div in:fade={{ duration: 300 }} class="dokibtn__icon-menu">
+      <XIcon size={36} />
+    </div>
+  {/if}
 </button>
 
 {#if menu.value}
@@ -26,10 +37,10 @@
     >
       <nav>
         <ul>
-          {#each keys as key}
+          {#each keys as key, i}
             <li class="doki-box__item">
-              <a href={`#${key}`} onclick={menu.clickHandler} class="doki-box__btn ">
-                <span class="doki-box__text">{key}</span>
+              <a href={`#${key}`} onclick={menu.clickHandler} class="doki-box__btn doki-box__btn--menuLanding">
+                <span class="doki-box__text">{statics[i]}</span>
               </a>
             </li>
           {/each}

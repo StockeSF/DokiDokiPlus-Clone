@@ -3,6 +3,7 @@
     "title": "Doki Doki Literature Club Plus!",
     "description": "Enter the #1 psychological horror experience! Discover why Doki Doki Literature Club is one of the most beloved psychological horror games of the decade."
   },
+  "ui": ["Intro", "Trailer", "Reviews", "Features", "Characters", "Game and Merch", "Newsletter"],
   "intro": {
     "title": "Enter the #1 <br /> Psychological Horror <br /> Experience!",
     "logoImg": {
