@@ -38,7 +38,7 @@ const duplicatedList = [...statics.reviewList, ...statics.reviewList]
 
   const swiper = $('.embla') as HTMLElement
 
-  const plugins = [Autoplay({ delay: 3500, stopOnMouseEnter: true })]
+  const plugins = [Autoplay({ delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true })]
 
   const options: EmblaOptionsType = { loop: true, duration: 35 }
 
