@@ -12,11 +12,11 @@ const { statics } = Astro.props
   {Object.entries(statics.featureList).map(([key, { img, title, description }], i) => (
 		<article
 			class:list={[
-				'feature-card',
+				'feature-card animate',
 				{ 'feature-card--left': !(i % 2) },
 				{ 'feature-card--right': i % 2 }
 			]}
-			data-animation="feature-item"
+			data-intersection-observer="scale"
 		>
 			<header class="feature-card__header">
 				<div class="feature-card__title-wrapper">
@@ -51,3 +51,9 @@ const { statics } = Astro.props
 		</article>
   ))}
 </div>
+
+<script>
+	import { $$ } from '@shared/utils/dom-selector'
+
+
+</script>
