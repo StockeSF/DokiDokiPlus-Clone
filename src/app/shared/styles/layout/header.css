@@ -1,0 +1,28 @@
+.header-list {
+  position: fixed;
+  display: flex;
+  gap: .5rem;
+  z-index: 60;
+  top: clamp(15px, 2.25vw, 30px);
+  right: clamp(10px, 2.5vw, 50px);
+}
+
+.header-link {
+  --_t: clamp(15px, 2.25vw, 30px);
+  --_r: unset;
+  --_b: unset;
+  --_l: unset;
+
+  position: inherit;
+  top: var(--_t);
+  right: var(--_r);
+  bottom: var(--_b);
+  left: var(--_l);
+}
+
+.header-link--home {
+  --_l: clamp(10px, 2.5vw, 50px);
+
+  position: fixed;
+  z-index: 51;
+}

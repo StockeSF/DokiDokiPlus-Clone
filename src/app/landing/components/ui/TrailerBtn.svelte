@@ -4,7 +4,7 @@
   let { trailerStatics, children } = $props()
 </script>
 
-<button onclick={trailer.clickHandler} class="trailerbtn" aria-label={trailerStatics.arias['aria-open-trailer']}>
+<button onclick={trailer.clickHandler} class="trailerbtn animate" aria-label={trailerStatics.arias['aria-open-trailer']} data-intersection-observer="fadeUp">
   <picture class="trailerbtn__picture">
     <source srcset={`${trailerStatics.img.src}.avif`} type="image/avif" />
     <img

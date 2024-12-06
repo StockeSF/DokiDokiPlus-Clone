@@ -44,11 +44,35 @@ const KEYS = lang.keys
   import { TranslateAnimation } from '@landing/utils/translate-animation'
 
   const elements = $$('[data-translate-style]')
-  
   const translate = new TranslateAnimation(elements)
+
+  const observedElements = $$('[data-intersection-observer]')
+
+  const options: IntersectionObserverInit = { threshold: .2 }
+
+  const addStyle = (entry: HTMLElement) => {
+    const type = entry.dataset.intersectionObserver
+    entry.classList.add(`animate--${type}`)
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const element = entry.target as HTMLElement
+        addStyle(element)
+        observer.unobserve(element)
+      }
+    })
+  }, options)
+  
+  observedElements.forEach(el => {
+    el.classList.add('animate')
+    observer.observe(el)
+  })
   translate.init()
 </script>
 
 <style is:global>
-  @import url('./styles/translate.css');
+  @import url('./styles/others/translate.css');
+  @import url('./styles/components/dokibox.css');
 </style>

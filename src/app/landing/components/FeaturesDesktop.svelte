@@ -11,10 +11,10 @@
   const featuresTabs = createTabs(statics.featureList, 'ddlc')
 </script>
 
-<div class="features__desktop">
+<article class="features__desktop">
   <FeatureTab store={featuresTabs}>
     {@render children()}
   </FeatureTab>
 
   <FeatureOptions store={featuresTabs} statics={statics.featureList} />
-</div>
+</article>

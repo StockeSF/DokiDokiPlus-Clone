@@ -18,7 +18,11 @@ const { title, link, btnTitle, img, iterator } = Astro.props
     { "buynow__section--even": iterator % 2 }
   ]}
 >
-  <picture class="buynow__picture" data-translate-style="buynow" data-translate-media-query="lg">
+  <picture
+    class="buynow__picture"
+    data-translate-style="buynow"
+    data-translate-media-query="lg"
+  >
     <source srcset={`${img.src}.avif`} type="image/avif">
     <img
       src={`${img.src}.webp`}
@@ -30,9 +34,15 @@ const { title, link, btnTitle, img, iterator } = Astro.props
   </picture>
 
   <div class="buynow__content">
-    <h2 class="buynow__title">{title}</h2>
+    <h2
+      class="buynow__title animate"
+      data-intersection-observer="fadeUp"
+      data-intersection-observer-delay="150"
+    >
+      {title}
+    </h2>
 
-    <DokiBtn as="a" href={link} variant="lg" typeBtn="g&m">
+    <DokiBtn as="a" href={link} variant="lg" typeBtn="g&m" class="animate" data-intersection-observer="fadeUp">
       {btnTitle}
     </DokiBtn>
   </div>

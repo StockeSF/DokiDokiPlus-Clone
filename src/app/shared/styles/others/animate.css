@@ -1,0 +1,73 @@
+.animate {
+  --_anim-name: unset;
+  --_anim-duration: 1s;
+  --_anim-mode: forwards;
+  --_anim-delay: unset;
+
+  opacity: 0;
+  animation-name: var(--_anim-name);
+  animation-fill-mode: var(--_anim-mode);
+  animation-duration: var(--_anim-duration);
+  animation-delay: var(--_anim-delay);
+}
+
+.animate--fadeUp {
+  --_anim-name: fadeUp;
+}
+
+.animate--fadeRight {
+  --_anim-name: fadeRight;
+}
+
+.animate--fadeLeft {
+  --_anim-name: fadeLeft;
+}
+
+.animate--delay-150 {
+  --_anim-delay: 150ms;
+}
+
+.animate--delay-500 {
+  --_anim-delay: 500ms;
+}
+
+.animate--delay-1250 {
+  --_anim-delay: 1.25s;
+}
+
+.animate--delay-1500 {
+  --_anim-delay: 1.5s;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

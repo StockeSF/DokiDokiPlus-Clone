@@ -25,7 +25,7 @@ const lang = langSelector({ currentLocale, labels })
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		<link rel="preload" href="/assets/fonts/Riffic.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
@@ -41,4 +41,9 @@ const lang = langSelector({ currentLocale, labels })
 
 <style is:global>
 	@import url('../styles/globals.css');
+
+	@import url('../styles/layout/header.css');
+	@import url('../styles/layout/footer.css');
+
+  @import url('../styles/others/animate.css');
 </style>

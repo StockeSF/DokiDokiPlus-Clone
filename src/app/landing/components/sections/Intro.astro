@@ -34,14 +34,14 @@ const charactersList = Object.entries(statics.charactersImg)
           <source srcset={`${statics.logoImg.src}.avif`} type="image/avif">
           <img
             src={`${statics.logoImg.src}.webp`}
-            class="intro__logo fade"
+            class="intro__logo animate"
             decoding="async"
             fetchpriority="high"
             alt={statics.logoImg.alt}
           />
         </picture>
   
-        <h1 id="intro-title" class="intro__title fade" set:html={statics.title} />
+        <h1 id="intro-title" class="intro__title animate" set:html={statics.title} />
       </div>
 
       {charactersList.map(([key, { img, translateStyle }]) => (
@@ -54,7 +54,7 @@ const charactersList = Object.entries(statics.charactersImg)
             src={`${img.src}.webp`}
             decoding="async"
             fetchpriority="high"
-            class="intro__character-image fade"
+            class="intro__character-image animate"
             alt={img.alt}
           />
         </picture>
@@ -85,25 +85,22 @@ const charactersList = Object.entries(statics.charactersImg)
 
   window.addEventListener('DOMContentLoaded', () => {
     backCharacters.forEach((char, i) => {
-      char.classList.add('fade--back')
-      if (i == 0) char.classList.add('fade--right')
-      if (i == 1) char.classList.add('fade--left')
+      if (i == 0) char.classList.add('animate--fadeRight')
+      if (i == 1) char.classList.add('animate--fadeLeft')
     })
 
     frontCharacters.forEach((char, i) => {
-      char.classList.add('fade--front')
+      char.classList.add('animate--delay-500')
 
-      if (i == 0) char.classList.add('fade--right')
-      if (i == 1) char.classList.add('fade--left')
+      if (i == 0) char.classList.add('animate--fadeRight')
+      if (i == 1) char.classList.add('animate--fadeLeft')
     })
 
-    logo!.classList.add('fade--up')
-    logo!.classList.add('fade--logo')
-    title!.classList.add('fade--up')
-    title!.classList.add('fade--title')
+    logo!.classList.add('animate--fadeUp', 'animate--delay-1250')
+    title!.classList.add('animate--fadeUp', 'animate--delay-1500')
   }, { once: true })
 </script>
 
 <style is:global>
-  @import url('../../styles/intro.css');
+  @import url('../../styles/sections/intro.css');
 </style>

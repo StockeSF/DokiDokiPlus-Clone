@@ -49,7 +49,7 @@
 
 .feature-card--pc {
   position: absolute;
-  width: min(100%, 48rem);
+  width: min(100%, 50rem);
 }
 
 .feature-card--pc-box {
@@ -191,7 +191,12 @@
 }
 
 @media screen and (min-width: 1536px) {
-  .features__desktop-preview {
-    width: min(100%, 56rem);
+  .feature-card--pc {
+    width: min(75%, 80rem);
+  }
+
+  .feature-card--pc-box {
+    right: 5%;
+    bottom: 20%;
   }
 }

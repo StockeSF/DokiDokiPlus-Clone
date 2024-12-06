@@ -1,0 +1,141 @@
+.dokibtn {
+  --_primary-color: var(--doki-pink);
+  --_hover-color: var(--doki-magenta);
+  --_fs: 1rem;
+  --_pad: 0;
+
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  padding: var(--_pad);
+  color: white;
+  background: var(--_primary-color);
+  transition: background 150ms ease;
+  border: 2px solid white;
+  font-family: var(--riffic);
+  font-size: var(--_fs);
+  border-radius: 9999px;
+}
+
+.dokibtn:hover {
+  background: var(--_hover-color);
+}
+
+.dokibtn__icon-menu {
+  display: inline-flex;
+}
+
+.dokibtn--trailer {
+  --_xy: unset;
+
+  position: absolute;
+  inset: var(--_xy);
+  width: 4rem;
+  height: 4rem;
+  display: grid;
+  place-content: center;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.dokibtn--trailer-close {
+  --_xy: -25% 0 0 50%;
+  transform: translateX(-50%);
+}
+
+.dokibtn--trailer-x {
+  transition: transform 500ms ease;
+}
+
+.dokibtn--trailer-close:hover .dokibtn--trailer-x {
+  transform: rotate(90deg);
+}
+
+.dokibtn--header {
+  --_pad: 1rem;
+}
+
+.dokibtn--header-menu {
+  --_pad: .5rem;
+
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+.dokibtn--header-home {
+  --_pad: 1rem;
+}
+
+.dokibtn--gm {
+  --_primary-color: var(--doki-purple);
+  --_hover-color: var(--doki-pink);
+  --_pad: 1.25rem 3rem;
+
+  margin: 1rem auto;
+  border: 0;
+}
+
+.dokibtn--newsletter {
+  --_primary-color: var(--doki-purple);
+  --_hover-color: var(--doki-pink);
+  --_pad: 1rem 0;
+
+  border: 1px solid var(--doki-purple);
+  border-radius: 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+.dokibtn--footer {
+  --_primary-color: var(--doki-purple);
+  --_pad: 1rem;
+}
+
+/*  Font-sizes  */
+.dokibtn--text-sm {
+  --_fs: .875rem;
+}
+
+.dokibtn--text-lg {
+  --_fs: 1.25rem;
+}
+
+.dokibtn--text-xl {
+  --_fs: 1.5rem;
+}
+
+.dokibtn--text-xl {
+  --_fs: 2rem;
+}
+
+.dokibtn--text-xxl {
+  --_fs: 2.5rem;
+}
+
+/*  Paddings */
+.dokibtn--header {
+  --_pad: 1rem;
+}
+
+@media screen and (min-width: 640px) {
+  .dokibtn--trailer-close {
+    --_xy: -15% 0 0 50%;
+  }
+
+  .dokibtn--header-home {
+    --_pad: 1rem 1.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .dokibtn--trailer-close {
+    --_xy: -10% 0 0 50%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .dokibtn--trailer-close {
+    --_xy: -5% 0 0 50%;
+  }
+}
