@@ -20,7 +20,7 @@ const SEO = lang.seo
 const KEYS = lang.keys
 ---
 
-<Layout title={SEO.title} description={SEO.description} isLanding={true}>
+<Layout title={SEO.title} description={SEO.description} url={SEO.url} isLanding>
   <Menu keys={KEYS} statics={lang.ui} client:load />
 
   <Intro
