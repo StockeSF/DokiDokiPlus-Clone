@@ -35,6 +35,7 @@
         "title": "North America",
         "img": {
           "src": "/assets/others/DDLCESRB",
+          "width": "222.3",
           "alt": "Mature 17+ ESRB"
         }
       },
@@ -42,6 +43,7 @@
         "title": "Europe",
         "img": {
           "src": "/assets/others/PEGI18",
+          "width": "98.3",
           "alt": "PEGI 18"
         }
       },
@@ -49,6 +51,7 @@
         "title": "Germany",
         "img": {
           "src": "/assets/others/f_18",
+          "width": "120",
           "alt": "USK ab 18"
         }
       }

@@ -17,6 +17,8 @@
       >
         <img
           src={`${char.img.chibi.src}.webp`}
+          decoding="async"
+          loading="lazy"
           width="75"
           height="130"
           alt={char.img.chibi.alt}

@@ -40,6 +40,8 @@ const { statics } = Astro.props
             <img
               src={`${img.src}.webp`}
               class={`footer__rate-img footer__rate-img--${key}`}
+              width={img.width}
+              height="124"
               decoding="async"
               fetchpriority="low"
               loading="lazy"
